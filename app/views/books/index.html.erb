@@ -1,1 +1,23 @@
 <%= render 'user-info', user: @user, book: @book %>
+
+<h2>Books</h2>
+<% @books.each do |book| %>
+<table class="table table-striped">
+
+ <thead>
+  <tr>
+   <th></th>
+   <th>Title</th>
+   <th>Opinion</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td> <%= image_tag book.user.profile_image(100, 100) %> </td>
+   <td><p>Title:<%= book.title %></p></td>
+   <td>  <p>Opinion:<%= book.opinion %></p></td>
+  </tr>
+ </tbody>
+</table>
+<% end %>
+

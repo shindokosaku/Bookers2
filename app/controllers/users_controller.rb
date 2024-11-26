@@ -2,13 +2,16 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
     @books = @user.books
+    @book=Book.new
   end
 
   def edit
-    @user = @user.books.page(params[:id])
+    @user = User.find(params[:id])
   end
   def index
-    @user=User.all
+    @users=User.all
+    @user=User.find(current_user.id)
+    @book=Book.new
   end
   def update
     @user = User.find(params[:id])

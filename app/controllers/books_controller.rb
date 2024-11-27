@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     @book.save
     
-    redirect_to book_path
+    redirect_to book_path(@book)
   end
   def show
     @book=Book.find(params[:id])

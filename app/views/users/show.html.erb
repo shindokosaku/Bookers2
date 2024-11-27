@@ -1,29 +1,11 @@
-# app/views/users/show.html.erbを変更
+<!-- app/views/users/show.html.erbを変更 -->
 
 <div class='container px-5 px-sm-0'>
 	<div class='row'>
 	  <div class='col-md-3'>
-		 <%= render '/books/user-info', user: @user, book: @book %>
-	    # <h2>User info</h2>
-	    # <!-- モックのため、固定値や未実装になっている部分があります。アプリ完成前に修正しましょう。 -->
-	    # <table class='table'>
-	    #   <tr>
-	    #     <%= image_tag 'default-image.jpg' %>  <!-- 固定値になっているので変数を使いましょう -->
-	    #   </tr>
-	    #   <tr>
-	    #     <th>name</th>
-	    #     <th>DMM太郎</th>  <!-- 固定値になっているので変数を使いましょう -->
-	    #   </tr>
-	    #   <tr>
-	    #     <th>introduction</th>
-	    #     <th></th>  <!-- 固定値になっているので変数を使いましょう -->
-	    #   </tr>
-	    # </table>
-	    # <div class='row'>
-	    #   <!-- 編集リンクが未実装 -->
-	    # </div>
-	    # <h2 class="mt-3">New book</h2>
-	    # <!-- form_withを用いて新規投稿フォームを作成しましょう。 -->
+		 <%= render "/books/user-info", user: @user, book: @book %>
+	   
+			
 	  </div> 
 	  <div class='col-md-8 offset-md-1'>
 	    <h2>Books</h2>

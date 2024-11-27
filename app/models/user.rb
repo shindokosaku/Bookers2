@@ -9,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-
+         validates :name, presence: true
   
          def get_profile_image(width, height)
           unless profile_image.attached?

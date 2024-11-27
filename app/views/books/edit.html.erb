@@ -1,17 +1,12 @@
 <h2>Editing Book</h2>
-<%= form_with model: @book, url: update_user_path(@book.id), method: :patch do |f| %>
+<%= form_with model: @book, url: edit_user_path(@book.id), method: :patch do |f| %>
   <label for="book_title">Title</label>
 
-  <%= f.text_field :name, autofocus: true, id:"", placeholder:"名前"%>
+  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前" %>
 
   <label for="book_opinion">Opinion</label>
 
-  
-  <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>  
-  
-  <label for="user_introduction">Introduction</label>
-  <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>
-  
+  <textarea class="form-control opinion" name="book[opinion]" id="book_opinion"></textarea>
   <%= f.submit "Update Book" %>
   <p><%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %></p>
 <% end %>

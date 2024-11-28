@@ -1,12 +1,25 @@
 <h2>Editing Book</h2>
-<%= form_with model: @book, url: edit_user_path(@book.id), method: :patch do |f| %>
-  <label for="book_title">Title</label>
 
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前" %>
-
-  <label for="book_opinion">Opinion</label>
-
-  <textarea class="form-control opinion" name="book[opinion]" id="book_opinion"></textarea>
-  <%= f.submit "Update Book" %>
-  <p><%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %></p>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
 <% end %>
+
+<%= form_with model: @book do |f| %>
+  <div class="form-group">
+    <label for="book_title">Title</label>
+    <%= f.text_field :title, autofocus: true, id:"inputName" %>
+  </diV>
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+    <%= f.text_area :body, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class:"btn btn-success" %>
+  </div>
+<% end %>
+<p><%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %></p>
